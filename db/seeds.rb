@@ -11,3 +11,10 @@ mix1.clips.create(order: 5, start_time: 10, duration: 11, url: "hUBIX4_UCUI")
 mix1.clips.create(order: 6, start_time: 2, duration: 5, url: "kvxCU_lQwKM")
 mix1.clips.create(order: 7, start_time: 22, duration: 9, url: "Nq_BY3-fFyI")
 
+mix2 = george.mixes.create(name: "Sails of Charon")
+
+mix2.clips.create(order: 0, start_time: 2, duration: 0, url: "aoI7deS76Ck")
+mix2.clips.create(order: 1, start_time: 6, duration: 40, url: "3eRBFkxgG7g")
+mix2.clips.create(order: 2, start_time: 88, duration: 60, url: "duGxOdcqg3I")
+mix2.clips.create(order: 3, start_time: 0, duration: 60, url: "1pBgPwNiQfU")
+
