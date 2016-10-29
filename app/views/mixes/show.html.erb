@@ -1,8 +1,10 @@
 <div class='jumbotron'>
+  <%= content_tag :div, class: "clip_info", data: {clips: @mix.clips[1..-1]} do %>
+  <% end %>
   <h1><%= @mix.name %></h1>
 
   <iframe id="sound_vid" type="text/html" width="640" height="390"
-    src="https://www.youtube.com/embed/vsGmidtksf4?controls=0&showinfo=0&rel=0&autoplay=1&enablejsapi=1&start=1"
+    src=<%='https://www.youtube.com/embed/' + @mix.clips.first.url + '?controls=0&showinfo=0&rel=0&autoplay=1&enablejsapi=1&start=' + @mix.clips.first.start_time.to_s %>
     frameborder="0" allowfullscreen>
   </iframe>
 
