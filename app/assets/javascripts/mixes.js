@@ -1,4 +1,11 @@
-var playerCount = 7
+$(document).ready(function(){
+    $('#sound_vid').toggle()
+    var playerCount = $('.clip_info').data('clips').length
+    for (var i = 1; i < playerCount; i++) {
+        $('#clip' + (i+1)).toggle();
+    };
+})
+
 var players = []
 
 var tag = document.createElement('script');
@@ -13,16 +20,14 @@ function onYouTubeIframeAPIReady() {
             'onReady': onPlayerReady
         }
     });
-
-    for (var i = 1; i < playerCount; i++) {
-        players[i] = new YT.Player('clip' + (i+1));
-    };
 }
 
 function onPlayerReady() {
+    var playerCount = $('.clip_info').data('clips').length
     var durations = [0]
-    for (var i = 0; i < $('.clip_info').data('clips').length; i++) {
-      durations.push(($('.clip_info').data('clips')[i].duration) * 1000)
+    for (var i = 1; i < playerCount; i++) {
+        players[i] = new YT.Player('clip' + (i+1));
+        durations.push(($('.clip_info').data('clips')[i-1].duration) * 1000)
     };
     function playerSwitch(currentYT, currentEl, playerNum) {
         setTimeout(function () {
@@ -43,9 +48,3 @@ function onPlayerReady() {
     playerSwitch(players[0], $('#clip1'), 1)
 }
 
-$(document).ready(function(){
-    $('#sound_vid').toggle()
-    for (var i = 1; i < playerCount; i++) {
-        $('#clip' + (i+1)).toggle();
-    };
-})
