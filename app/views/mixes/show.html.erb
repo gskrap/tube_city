@@ -1,4 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class='jumbotron'>
+  <h1><%= @mix.name %></h1>
 
-<%= link_to 'Edit', edit_mix_path(@mix) %> |
-<%= link_to 'Back', mixes_path %>
+  <iframe id="sound_vid" type="text/html" width="640" height="390"
+    src="https://www.youtube.com/embed/vsGmidtksf4?controls=0&showinfo=0&rel=0&autoplay=1&enablejsapi=1&start=1"
+    frameborder="0" allowfullscreen>
+  </iframe>
+
+  <% counter = 1 %>
+  <% @vid_hash.each do |url_hash, start| %>
+    <iframe id=<%='clip' + (counter.to_s) %> type="text/html" width="640" height="390"
+      src=<%='https://www.youtube.com/embed/' + url_hash + '?controls=1&showinfo=0&rel=0&autoplay=0&enablejsapi=1&start=' + start.to_s %>
+      frameborder="0" allowfullscreen>
+    </iframe>
+    <% counter += 1 %>
+  <% end %>
+</div>

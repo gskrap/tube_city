@@ -10,6 +10,10 @@ class MixesController < ApplicationController
   # GET /mixes/1
   # GET /mixes/1.json
   def show
+    @vid_hash = {}
+    @mix.clips.each do |clip|
+      @vid_hash[clip.url] = clip.start_time
+    end
   end
 
   # GET /mixes/new
