@@ -1,5 +1,24 @@
 <h1>New Mix</h1>
 
-<%= render 'form' %>
+<%= form_tag do %>
+  <%= text_field_tag(:soundtrack_url) %>
+  <%= submit_tag "Submit Soundtrack", id: "soundtrack_submit" %>
+<% end %>
+
+<div id="soundtrack_container">
+</div>
+
+<div id="number_of_clips_container">
+  <%= form_tag do %>
+    <%= submit_tag "Add Clip", id: "clips_submit" %>
+  <% end %>
+</div>
+
+<div id="clip_fields_container">
+</div>
+
+<%= submit_tag 'Create Mix!' %>
 
 <%= link_to 'Back', mixes_path %>
+
+<%= javascript_include_tag("soundtrack.js") %>

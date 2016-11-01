@@ -1,9 +1,8 @@
-<div class="jumbotron">
-  <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
+<h1>Mixes</h1>
 
-  <h1>Mixes</h1>
+<% @mixes.each do |mix| %>
+<%= link_to mix.name, mix %><br>
+<% end %>
 
-  <% @mixes.each do |mix| %>
-  <%= link_to mix.name, mix %><br>
-  <% end %>
-</div>
+<br><%= link_to "New Mix", new_mix_path %>
