@@ -18,6 +18,7 @@
 </div>
 
 <%= form_tag do %>
+  <%= text_field_tag(:mix_name, nil, placeholder: "Mix Name") %>
   <%= submit_tag "Create Mix!", id: "mix_submit" %>
 <% end %>
 

@@ -28,13 +28,14 @@ class MixesController < ApplicationController
   # POST /mixes
   # POST /mixes.json
   def create
-    binding.pry
-    @mix = Mix.new(mix_params)
-
+    @mix = Mix.new(name: params['mix_name'], creator_id: session['user_id'])
     respond_to do |format|
       if @mix.save
-        format.html { redirect_to @mix, notice: 'Mix was successfully created.' }
-        format.json { render :show, status: :created, location: @mix }
+        @mix.clips.create(order: 0, url: params['soundtrack_url'], start_time: params['soundtrack_start'], duration: 0)
+        params['clips'].each do |clip_num, data|
+          @mix.clips.create(order: clip_num, url: data[0], start_time: data[1], duration: data[2])
+        end
+        redirect_to @mix
       else
         format.html { render :new }
         format.json { render json: @mix.errors, status: :unprocessable_entity }

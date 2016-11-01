@@ -10,7 +10,7 @@ $('#soundtrack_submit').on('click', function(event){
     "<iframe id='sound_vid' type='text/html' width='640' height='390' src='https://www.youtube.com/embed/" + youtube_parser($('#soundtrack_url').val()) + "?controls=1&showinfo=0&rel=0&autoplay=0&enablejsapi=1&start=0' frameborder='0' allowfullscreen></iframe>"
   );
   $('#soundtrack_container').append(
-    "<input id='soundtrack_start' type='text' placeholder='Soundtrack Start Time' name='soundtrack_start'>"
+    "<br><input id='soundtrack_start' type='text' placeholder='Soundtrack Start Time' name='soundtrack_start'>"
   );
   $('#number_of_clips_container').show();
 });
@@ -30,13 +30,14 @@ $('#mix_submit').on('click', function(event){
   var numClips = $('.clip_row').length
   var clipInfo = {};
   for( i = 1; i <= numClips; i++){
-    clipInfo[i] = [$('#clip'+i+'_url').val(), $('#clip'+i+'_start').val(), $('#clip'+i+'_duration').val()];
+    clipInfo[i] = [youtube_parser($('#clip'+i+'_url').val()), $('#clip'+i+'_start').val(), $('#clip'+i+'_duration').val()];
   };
   $.ajax({
     url: '/mixes',
     method: 'post',
     data: {
-      'soundtrack_url': $('#soundtrack_url').val(),
+      'mix_name': $('#mix_name').val(),
+      'soundtrack_url': youtube_parser($('#soundtrack_url').val()),
       'soundtrack_start': $('#soundtrack_start').val(),
       'clips': clipInfo
     }
