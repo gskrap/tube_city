@@ -17,7 +17,9 @@
 <div id="clip_fields_container">
 </div>
 
-<%= submit_tag 'Create Mix!' %>
+<%= form_tag do %>
+  <%= submit_tag "Create Mix!", id: "mix_submit" %>
+<% end %>
 
 <%= link_to 'Back', mixes_path %>
 

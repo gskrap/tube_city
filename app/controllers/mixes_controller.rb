@@ -28,6 +28,7 @@ class MixesController < ApplicationController
   # POST /mixes
   # POST /mixes.json
   def create
+    binding.pry
     @mix = Mix.new(mix_params)
 
     respond_to do |format|
