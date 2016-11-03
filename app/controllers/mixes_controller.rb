@@ -10,9 +10,9 @@ class MixesController < ApplicationController
   # GET /mixes/1
   # GET /mixes/1.json
   def show
-    @vid_hash = {}
+    @vid_array = []
     @mix.clips[1..-1].each do |clip|
-      @vid_hash[clip.url] = clip.start_time
+      @vid_array << [clip.url, clip.start_time]
     end
   end
 
@@ -29,17 +29,14 @@ class MixesController < ApplicationController
   # POST /mixes.json
   def create
     @mix = Mix.new(name: params['mix_name'], creator_id: session['user_id'])
-    respond_to do |format|
-      if @mix.save
-        @mix.clips.create(order: 0, url: params['soundtrack_url'], start_time: params['soundtrack_start'], duration: 0)
-        params['clips'].each do |clip_num, data|
-          @mix.clips.create(order: clip_num, url: data[0], start_time: data[1], duration: data[2])
-        end
-        redirect_to @mix
-      else
-        format.html { render :new }
-        format.json { render json: @mix.errors, status: :unprocessable_entity }
+    if @mix.save
+      @mix.clips.create(order: 0, url: params['soundtrack_url'], start_time: params['soundtrack_start'], duration: 0)
+      params['clips'].each do |clip_num, data|
+        @mix.clips.create(order: clip_num, url: data[0], start_time: data[1], duration: data[2])
       end
+      render js: "window.location = '/mixes/#{@mix.id}'"
+    else
+      render :404
     end
   end
 

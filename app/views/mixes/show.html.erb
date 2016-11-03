@@ -8,12 +8,11 @@
 </iframe>
 
 <% counter = 1 %>
-<% @vid_hash.each do |url_hash, start| %>
+<% @vid_array.each do |vid| %>
   <iframe id=<%='clip' + (counter.to_s) %> type="text/html" width="640" height="390"
-    src=<%='https://www.youtube.com/embed/' + url_hash + '?controls=1&showinfo=0&rel=0&autoplay=0&enablejsapi=1&start=' + start.to_s %>
+    src=<%='https://www.youtube.com/embed/' + vid[0] + '?controls=1&showinfo=0&rel=0&autoplay=0&enablejsapi=1&start=' + vid[1].to_s %>
     frameborder="0" allowfullscreen>
   </iframe>
   <% counter += 1 %>
 <% end %>
 <%= javascript_include_tag("mixes.js") %>
-
