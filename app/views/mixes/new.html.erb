@@ -1,27 +1,27 @@
 <h1>New Mix</h1>
 
-<%= form_tag do %>
-  <%= text_field_tag(:soundtrack_url) %>
-  <%= submit_tag "Submit Soundtrack", id: "soundtrack_submit" %>
-<% end %>
-
-<div id="soundtrack_container">
-</div>
-
-<div id="number_of_clips_container">
-  <%= form_tag do %>
-    <%= submit_tag "Add Clip", id: "clips_submit" %>
+<div id='new_mix_container'>
+  <%= form_tag({}, id: 'soundtrack_form', class: "form-group") do %>
+    <%= text_field_tag :soundtrack_url, nil, class: 'form-control' %>
+    <%= submit_tag "Submit Youtube URL for Soundtrack", id: "soundtrack_submit", class: 'btn btn-default' %>
   <% end %>
+
+  <div id="soundtrack_container">
+  </div>
+
+  <div id="clip_fields_container">
+  </div>
+
+  <%= form_tag({}, id: "add_clip_form") do %>
+    <%= submit_tag "Add Clip", id: "clips_submit", class: 'btn btn-default' %>
+  <% end %>
+
+  <%= form_tag({}, id: "create_mix_form", class: "form-group") do %>
+    <%= text_field_tag(:mix_name, nil, placeholder: "Mix Name", class: 'form-control') %>
+    <%= submit_tag "Create Mix!", id: "mix_submit", class: 'btn btn-success' %>
+  <% end %>
+
+  <%= link_to 'Back', mixes_path %>
 </div>
-
-<div id="clip_fields_container">
-</div>
-
-<%= form_tag do %>
-  <%= text_field_tag(:mix_name, nil, placeholder: "Mix Name") %>
-  <%= submit_tag "Create Mix!", id: "mix_submit" %>
-<% end %>
-
-<%= link_to 'Back', mixes_path %>
 
 <%= javascript_include_tag("soundtrack.js") %>

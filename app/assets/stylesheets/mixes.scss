@@ -2,6 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#number_of_clips_container {
+#new_mix_container {
+  input[type=text] {
+    text-align: center;
+  }
+  width: 640px;
+  text-align: center;
+  margin: auto;
+}
+
+#add_clip_form {
   display: none;
+}
+
+#soundtrack_form {
+  margin-bottom: 20px;
+}
+
+#soundtrack_submit, #mix_submit {
+  width: 100%;
+}
+
+#soundtrack_start {
+  width: 60px;
+}
+
+#clip_fields_container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#create_mix_form {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.clip_field {
+  display: inline-block;
+  width: 33.3%;
 }
