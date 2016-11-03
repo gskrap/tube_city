@@ -36,7 +36,7 @@ class MixesController < ApplicationController
       end
       render js: "window.location = '/mixes/#{@mix.id}'"
     else
-      render 404
+
     end
   end
 

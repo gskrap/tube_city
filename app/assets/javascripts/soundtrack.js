@@ -43,6 +43,9 @@ $('#mix_submit').on('click', function(event){
       'soundtrack_url': youtube_parser($('#soundtrack_url').val()),
       'soundtrack_start': $('#soundtrack_start').val(),
       'clips': clipInfo
+    },
+    error: function() {
+      alert("You forgot something! Maybe the Mix Name?");
     }
   });
 });

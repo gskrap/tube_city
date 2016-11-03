@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
-<h1>Mixes</h1>
+<h2>Mixes</h2>
 
 <% @mixes.each do |mix| %>
 <%= link_to mix.name, mix %><br>
 <% end %>
 
-<br><%= link_to "New Mix", new_mix_path %>
+<br><%= link_to "New Mix", new_mix_path, class: 'btn btn-default btn-sm' %>
