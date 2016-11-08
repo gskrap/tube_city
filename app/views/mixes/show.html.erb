@@ -3,7 +3,7 @@
 <h2><%= @mix.name %></h2>
 
 <iframe id="sound_vid" type="text/html" width="640" height="390"
-  src=<%='https://www.youtube.com/embed/' + @mix.clips.first.url + '?controls=0&showinfo=0&rel=0&autoplay=1&enablejsapi=1&start=' + @mix.clips.first.start_time.to_s %>
+  src=<%='https://www.youtube.com/embed/' + @mix.clips.order(:order).first.url + '?controls=0&showinfo=0&rel=0&autoplay=1&enablejsapi=1&start=' + @mix.clips.order(:order).first.start_time.to_s %>
   frameborder="0" allowfullscreen>
 </iframe>
 

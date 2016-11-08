@@ -11,7 +11,7 @@ class MixesController < ApplicationController
   # GET /mixes/1.json
   def show
     @vid_array = []
-    @mix.clips[1..-1].each do |clip|
+    @mix.clips.order(:order)[1..-1].each do |clip|
       @vid_array << [clip.url, clip.start_time]
     end
   end
