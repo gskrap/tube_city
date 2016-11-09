@@ -1,3 +1,9 @@
 .clip_thumb {
   width: 60px;
 }
+
+@media (max-width:500px) {
+  .clip_thumb {
+    width: 55px;
+  }
+}
