@@ -42,8 +42,14 @@
 .mix_list_container {
   width: 400px;
   margin: auto;
+  padding: 1px;
+  padding-bottom: 10px;
   text-align: left;
   padding-left: 34px;
+}
+
+.mix_list_container:nth-child(even) {
+  background: #E3E3E6;
 }
 
 @media (max-width:500px) {

@@ -13,16 +13,16 @@
  *= require_tree .
  *= require_self
  */
- .jumbotron {
-  text-align: center;
- }
-
  .navbar-right {
   margin-left: 5px;
  }
 
- @media (max-width:500px) {
-  .jumbotron {
-    margin-top: 20px;
-  }
+ .content_container {
+  text-align: center;
+  margin-top: 50px;
+ }
+
+ .form-control {
+  margin: auto;
+  text-align: center;
  }

@@ -57,6 +57,7 @@ class MixesController < ApplicationController
   # DELETE /mixes/1
   # DELETE /mixes/1.json
   def destroy
+    @mix.clips.destroy_all
     @mix.destroy
     respond_to do |format|
       format.html { redirect_to mixes_url, notice: 'Mix was successfully destroyed.' }

@@ -1,3 +1,4 @@
+<div>
 <% @mixes.each do |mix| %>
 <div class='mix_list_container'>
   <% thumb_clips = mix.clips[0..4] %>
@@ -8,5 +9,6 @@
   <h5>by: <%= mix.creator ? link_to(mix.creator.username, mix.creator) : "Anonymous" %></h5>
 </div>
 <% end %>
+</div>
 
 <br><%= link_to "New Mix", new_mix_path, class: 'btn btn-default btn-sm' %>
