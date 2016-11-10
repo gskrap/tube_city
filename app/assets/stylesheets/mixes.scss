@@ -52,6 +52,10 @@
   background: #E3E3E6;
 }
 
+#mobile-warning {
+  display: none;
+}
+
 @media (max-width:500px) {
   #new_mix_container {
     width: 360px;
@@ -62,5 +66,9 @@
   }
    .mix_list_container {
     width: 360px;
+  }
+  #mobile-warning {
+    display: block;
+    color: red;
   }
 }
