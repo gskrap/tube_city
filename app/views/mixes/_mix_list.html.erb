@@ -1,7 +1,10 @@
 <div>
+
+<%= link_to "Create New Mix!", new_mix_path, class: 'btn btn-default' %><br>
+
 <% @mixes.each do |mix| %>
 <div class='mix_list_container'>
-  <% thumb_clips = mix.clips[0..4] %>
+  <% thumb_clips = mix.clips.order(:order)[1..5] %>
   <h3><%= link_to mix.name, mix %></h3>
   <% thumb_clips.each do |clip| %>
     <img class='clip_thumb' src=<%= 'http://img.youtube.com/vi/' + clip.url + '/default.jpg' %>>
@@ -10,5 +13,3 @@
 </div>
 <% end %>
 </div>
-
-<br><%= link_to "New Mix", new_mix_path, class: 'btn btn-default btn-sm' %>

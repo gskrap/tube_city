@@ -32,7 +32,8 @@ function onPlayerReady() {
     function playerSwitch(currentYT, currentEl, playerNum) {
         setTimeout(function () {
             if (playerNum < players.length) {
-                nextYT = players[(players.indexOf(currentYT) + 1)]
+                $('#clip_num').html(playerNum + 1);
+                nextYT = players[(players.indexOf(currentYT) + 1)];
                 currentYT.stopVideo();
                 currentEl.toggle();
                 currentEl.next().toggle();
