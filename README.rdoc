@@ -1,28 +1,9 @@
-== README
+== TubeCity
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app allows users to create mashups of YouTube videos on the fly. The user first selects a video for the soundtrack of their mashup, and then selects other videos (and start times and durations) to be used as clips that are seamlessly played one after the other.
 
-Things you may want to cover:
+I've made use of the YouTube Javascript API here.
 
-* Ruby version
+I plan on adding more features and further improving functionality, but for now check it out live at:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+http://tube-city.herokuapp.com
