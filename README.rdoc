@@ -1,9 +1,5 @@
 == TubeCity
 
-This app allows users to create mashups of YouTube videos on the fly. The user first selects a video for the soundtrack of their mashup, and then selects other videos (and start times and durations) to be used as clips that are seamlessly played one after the other.
-
-I've made use of the YouTube Javascript API here.
-
-I plan on adding more features and further improving functionality, but for now check it out live at:
+This app uses the YouTube JavaScript API to allow users to create mashups of YouTube videos on the fly. The user first selects a video for the soundtrack of their mashup, and then selects other videos (and start times and durations) to be used as clips that are seamlessly played one after the other.
 
 http://tube-city.herokuapp.com
